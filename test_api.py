@@ -2,5 +2,6 @@
 
 from app import app
 
+
 def test_remove_this_test():
     assert True
