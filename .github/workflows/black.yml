@@ -1,19 +1,19 @@
 name: Black
 
 on:
-  push:
-    branches-ignore:
-      - 'main'
-  pull_request:
-    branches: '**'
-  workflow_dispatch:
+    push:
+        branches-ignore:
+            - 'main'
+    pull_request:
+        branches: '**'
+    workflow_dispatch:
 
 jobs:
-  Black:
-    runs-on: ubuntu-latest
+    Black:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - run: pip install black
-      - run: python -m black . --check
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-python@v2
+            - run: pip install black
+            - run: python -m black . --check
