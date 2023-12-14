@@ -8,7 +8,8 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "lint-fix": "npx prettier --write .",
-        "lint": "npx prettier --check ."
+        "lint": "npx prettier --check .",
+        "black-fix": "python -m black ."
     },
     "private": true,
     "dependencies": {
