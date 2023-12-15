@@ -12,7 +12,7 @@ CORS(app)
 def api_login():
     username = request.args.get("username")
     password = request.args.get("password")
-    if username == None or password == None:
+    if username == "" or password == "":
         return {"Error": "No username or password entered"}, 404
     return {"Username": username, "Password": password}, 200
 
