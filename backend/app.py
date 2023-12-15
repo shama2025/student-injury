@@ -1,7 +1,6 @@
 """This app.py file will hold the api for the Angular application"""
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from flask_cors import CORS
-from api_util import confirmLoginCredentials
 
 
 app = Flask(__name__)
