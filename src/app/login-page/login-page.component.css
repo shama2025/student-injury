@@ -1,6 +1,6 @@
-.body{
+.body {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     padding: 100px;
 }
@@ -29,7 +29,7 @@ input {
 }
 
 button {
-    width: 48%; 
+    width: 48%;
     padding: 10px;
     background-color: #4caf50;
     color: #fff;
@@ -37,7 +37,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     display: inline-block;
-    margin-right: 4px; 
+    margin-right: 4px;
 }
 
 button:hover {

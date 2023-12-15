@@ -1,5 +1,5 @@
 """This app.py file will hold the api for the Angular application"""
-from flask import Flask,request,jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from api_util import confirmLoginCredentials
 
@@ -11,14 +11,11 @@ CORS(app)
 
 @app.route("/api/login")
 def api_login():
-    username = request.args.get('username')
-    password = request.args.get('password')
+    username = request.args.get("username")
+    password = request.args.get("password")
     if username == None or password == None:
-        return {"Error" : "No username or password entered"} , 404
-    return {
-        "Username" : username,
-        "Password" : password
-    },200
+        return {"Error": "No username or password entered"}, 404
+    return {"Username": username, "Password": password}, 200
 
 
 """This route will act as an api endpoint for new account creation"""

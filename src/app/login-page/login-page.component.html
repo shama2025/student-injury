@@ -1,13 +1,13 @@
 <div class="body">
     <div class="login-form">
         <label class="username" for="username-input">Username: </label>
-        <input type="text" class="username-input" name="username-input" #username required>
-    
+        <input type="text" class="username-input" name="username-input" #username required />
+
         <label class="password" for="password">Password: </label>
-        <input type="text" class="username-input" name="password" #password required>
-    
-        <button (click)="loginEvent(username,password)" id="submit-button">Sign In!</button>
+        <input type="text" class="username-input" name="password" #password required />
+
+        <button (click)="loginEvent(username, password)" id="submit-button">Sign In!</button>
         <!-- Routes to create User component -->
-        <button  id="submit-button">New User</button> 
+        <button id="submit-button">New User</button>
     </div>
 </div>
