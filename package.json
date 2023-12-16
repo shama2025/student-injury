@@ -11,7 +11,7 @@
         "black-fix": "python -m black .",
         "run api": "cd backend & python -m flask run",
         "run api-test": "python -m pytest test_api.py",
-        "run ui-test" : "python -m pytest test_ui.py"
+        "run ui-test": "python -m pytest test_ui.py"
     },
     "private": true,
     "dependencies": {

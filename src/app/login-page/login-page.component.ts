@@ -18,13 +18,13 @@ export class LoginPageComponent implements OnInit {
      */
     loginEvent(username: HTMLInputElement, password: HTMLInputElement): void {
         this.loginPageService.confirmLogin(username.value, password.value).subscribe(response => {
-           if(response == "Yes"){
+            if (response == 'Yes') {
                 //Route to student-injury-form page
-                console.log("Hooray")
-           }else{
+                console.log('Hooray');
+            } else {
                 //Display a popup box that user does not exist and encourage new account creation
-                console.log("Boo")
-           }
+                console.log('Boo');
+            }
         });
     }
 }

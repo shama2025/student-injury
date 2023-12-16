@@ -18,13 +18,9 @@ def api_login():
             "No username or password entered", content_type="text/plain", status=404
         )
     confirmLogin = confirmLoginCredentials(username, password)
-    if not confirmLogin: #If user doesn't exist
-        return Response(
-            "No", status=404
-        )  # Returns a user not founc
-    return Response(
-        "Yes", status=200
-    )  # Returns ok when user is found
+    if not confirmLogin:  # If user doesn't exist
+        return Response("No", status=404)  # Returns a user not found
+    return Response("Yes", status=200)  # Returns ok when user is found
 
 
 """This route will act as an api endpoint for new account creation"""

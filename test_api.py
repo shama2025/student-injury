@@ -4,19 +4,23 @@ import random
 import string
 from backend.app import app
 
+
 @pytest.fixture()
 def client():
     app.config["TESTING"] = True
     return app.test_client()
 
+
 def test_login_existing_user_api(client):
     """This test will confirm the existing users login information is correct using the api"""
-    response = client.get('/api/login?username=JohnDoe123&password=password123')
+    response = client.get("/api/login?username=JohnDoe123&password=password123")
     assert response.status_code == 200
 
 
 def test_login_non_existent_user_api(client):
     """This test will confirm the non-existent users login information is incorrect using the api"""
-    random_string = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
-    response = client.get(f'/api/login?username={random_string}&password={random_string}')
+    random_string = "".join(random.choices(string.ascii_letters + string.digits, k=10))
+    response = client.get(
+        f"/api/login?username={random_string}&password={random_string}"
+    )
     assert response.status_code == 404
