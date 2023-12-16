@@ -18,4 +18,6 @@ jobs:
             - run: pip install pytest
             - run: pip install pytest-playwright
             - run: playwright install
+            - run: npm install -g npm
+            - run: npm install -g @angular/cli
             - run: ng serve
