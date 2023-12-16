@@ -1,9 +1,6 @@
 name: API Pytest
 
 on:
-    push:
-        branches-ignore:
-            - 'main'
     pull_request:
         branches: '**'
     workflow_dispatch:
