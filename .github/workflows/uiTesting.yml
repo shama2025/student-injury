@@ -17,4 +17,5 @@ jobs:
             - run: pip install -r requirements.txt
             - run: pip install pytest
             - run: pip install pytest-playwright
+            - run: playwright install
             - run: ng serve & python -m flask run & python -m pytest test_ui.py
