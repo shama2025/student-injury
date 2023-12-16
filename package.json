@@ -10,7 +10,7 @@
         "lint-fix": "npx prettier --write .",
         "lint": "npx prettier --check .",
         "black-fix": "python -m black .",
-        "run api": "cd backend & python -m flask run",
+        "run api": "python -m flask run",
         "run api-test": "python -m pytest test_api.py",
         "run ui-test": "python -m pytest test_ui.py"
     },
