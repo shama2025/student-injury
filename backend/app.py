@@ -1,7 +1,7 @@
 """This app.py file will hold the api for the Angular application"""
 from flask import Flask, request, Response
 from flask_cors import CORS
-from api_util import confirmLoginCredentials
+from backend.api_util import confirmLoginCredentials
 
 
 app = Flask(__name__)
