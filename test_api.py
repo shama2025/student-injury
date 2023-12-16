@@ -2,7 +2,7 @@
 import pytest
 import random
 import string
-from backend.app import app
+from app import app
 
 
 @pytest.fixture()
