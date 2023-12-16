@@ -18,4 +18,4 @@ jobs:
             - run: pip install pytest
             - run: pip install pytest-playwright
             - run: playwright install
-            - run: ng serve && python -m flask run & python -m pytest test_ui.py
+            - run: ng serve & python -m flask run & python -m pytest test_ui.py
