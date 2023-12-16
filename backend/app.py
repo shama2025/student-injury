@@ -20,10 +20,10 @@ def api_login():
     confirmLogin = confirmLoginCredentials(username, password)
     if not confirmLogin: #If user doesn't exist
         return Response(
-            confirmLogin, content_type="text/plain", status=404
+            "No", status=404
         )  # Returns a user not founc
     return Response(
-        confirmLogin, content_type="text/plain", status=200
+        "Yes", status=200
     )  # Returns ok when user is found
 
 
