@@ -21,4 +21,4 @@ jobs:
             - run: npm install -g npm
             - run: npm install -g @angular/cli
             - run: npm install 
-            - run: ng serve
+            - run: ng serve & python -m flask run & python -m pytest test_ui.py
