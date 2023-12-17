@@ -20,7 +20,7 @@ jobs:
                   pip install pytest
             - name: Start SQL server and Run tests
               run: |
-                  sudo apt install mysql-server
-                  sudo service mysql start
+                  cd backend_util & python -m api_util
                   sleep 10
-                  python -m flask run & python -m pytest test_api.py
+                  python -m pytest test_api.py
+
