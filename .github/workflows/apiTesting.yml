@@ -7,11 +7,7 @@ on:
 jobs:
     Pytest:
         runs-on: ubuntu-latest
-        env:
-            DB_HOST: localhost
-            DB_USER: root
-            DB_PASSWORD: password123
-            DB_NAME: usersdb
+
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
@@ -24,7 +20,7 @@ jobs:
                   pip install pytest
             - name: Start SQL server
               run: |
-                  mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "USE $DB_NAME 
+                  mysql -h ${{secrets.DB_HOSTNAME}} -u ${{secrets.DB_USERNAME}} -p${{secrets.DB_PASSWORD}} 
                   sleep 10
             - name: Run API Tests
               run: |
