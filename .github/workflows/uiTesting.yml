@@ -25,6 +25,7 @@ jobs:
                   npm install
             - name: Start MYSQL server
               run: |
+                  sudo apt-get install mysql-server
                   mysql -h ${{secrets.DB_HOSTNAME}} -u ${{secrets.DB_USERNAME}} -p${{secrets.DB_PASSWORD}}
                   sleep 10
             - name: Run Ui Tests
