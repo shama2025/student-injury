@@ -1,4 +1,5 @@
-name: API Pytest
+//fix this later
+name: UI Pytest
 
 on:
     pull_request:
@@ -18,9 +19,14 @@ jobs:
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
                   pip install pytest
+                  pip install pytest-playwright
+                  playwright install
+                  npm install -g npm
+                  npm install -g @angular/cli
+                  npm install
             - name: Start SQL server and Run tests
               run: |
-                  cd backend_util & python -m api_util
+                  sudo apt install mysql-server
+                  sudo service mysql start
                   sleep 10
-                  python -m pytest test_api.py
-
+                  ng serve & python -m pytest test_ui.py & python -m flask run
