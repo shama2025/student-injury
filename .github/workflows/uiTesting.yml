@@ -1,5 +1,9 @@
 name: UI Pytest
-
+env:
+    DATABASE_NAME: usersdb
+    DATABASE_USERNAME: root
+    DATABASE_PASSWORD: password123
+    DATABASE_ENDPOINT: 127.0.0.1
 on:
     pull_request:
         branches: '**'
