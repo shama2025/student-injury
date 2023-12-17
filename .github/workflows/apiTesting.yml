@@ -27,5 +27,5 @@ jobs:
                   mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "USE $DB_NAME 
                   sleep 10
             - name: Run API Tests
-            - run: |
+              run: |
                   python -m flask run & python -m pytest test_api.py
