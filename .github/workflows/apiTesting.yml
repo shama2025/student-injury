@@ -7,6 +7,11 @@ on:
 jobs:
     Pytest:
         runs-on: ubuntu-latest
+         env:
+            DB_HOST: localhost
+            DB_USER: root
+            DB_PASSWORD: password123
+            DB_NAME: usersdb
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
