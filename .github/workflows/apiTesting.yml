@@ -22,5 +22,7 @@ jobs:
               run: |
                   sudo apt install mysql-server
                   sudo service mysql start
+                  mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';" -uroot
+                  python -m flask run &
                   sleep 10
-                  python -m flask run & python -m pytest test_api.py
+                  python -m pytest test_api.py
