@@ -21,6 +21,6 @@ jobs:
             - name: Start SQL server and Run tests
               run: |
                   sudo apt install mysql-server
-                  sudo start mysql.service
+                  sudo service mysql start
                   sleep 10
                   python -m flask run & python -m pytest test_api.py
