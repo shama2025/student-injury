@@ -23,4 +23,4 @@ jobs:
                   sudo apt install mysql-server
                   sudo service mysql start
                   sleep 10
-                  mysql -h ${{secrets.DB_HOSTNAME}} -u ${{secrets.DB_USERNAME}} -p${{secrets.DB_PASSWORD}} & python -m flask run & python -m pytest test_api.py
+                  python -m flask run & python -m pytest test_api.py
