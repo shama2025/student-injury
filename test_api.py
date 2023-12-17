@@ -1,6 +1,6 @@
 """This test_api.py file will hold all of the api tests for this application"""
 
-from app import app
+from backend.app import app
 
 
 def test_remove_this_test():
