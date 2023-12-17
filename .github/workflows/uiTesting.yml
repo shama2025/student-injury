@@ -29,4 +29,3 @@ jobs:
                   sudo service mysql status
                   sleep 10
                   mysql -h ${{secrets.DB_HOSTNAME}} -u ${{secrets.DB_USERNAME}} -p${{secrets.DB_PASSWORD}} & ng serve & python -m pytest test_ui.py & python -m flask run
-                  
