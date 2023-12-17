@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginPageServiceService } from '../login-page-service.service';
+import { LoginPageServiceService } from '../services/login-page-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
     selector: 'app-login-page',
@@ -18,7 +18,13 @@ export class LoginPageComponent implements OnInit {
      */
     loginEvent(username: HTMLInputElement, password: HTMLInputElement): void {
         this.loginPageService.confirmLogin(username.value, password.value).subscribe(response => {
-            alert(JSON.stringify(response));
+            if (response == 'Yes') {
+                //Route to student-injury-form page
+                console.log('Hooray');
+            } else {
+                //Display a popup box that user does not exist and encourage new account creation
+                console.log('Boo');
+            }
         });
     }
 }
