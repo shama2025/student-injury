@@ -41,6 +41,7 @@ For further help, refer to the [Gunicorn documentation](https://gunicorn.org/).
 ### Production Deployment for Angular frontend
 
 Type in this on your local machine
+
 ```sh
 https://<user_name>.github.io/<project_name>
 ```
