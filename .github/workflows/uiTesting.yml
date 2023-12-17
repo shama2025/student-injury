@@ -1,9 +1,5 @@
 name: UI Pytest
-env:
-    DATABASE_NAME: usersdb
-    DATABASE_USERNAME: root
-    DATABASE_PASSWORD: password123
-    DATABASE_ENDPOINT: 127.0.0.1
+
 on:
     pull_request:
         branches: '**'
@@ -11,26 +7,30 @@ on:
 jobs:
     Pytest:
         runs-on: ubuntu-latest
-        services:
-        mysql:
-            image: mysql:8.0
-            env:
-                MYSQL_DATABASE: usersdb
-                MYSQL_ROOT_PASSWORD: password123
-            ports:
-                - 3306:3306
-            options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        env:
+            DB_HOST: localhost
+            DB_USER: root
+            DB_PASSWORD: password123
+            DB_NAME: usersdb
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
               with:
                   python-version: '3.11.6'
-            - run: python -m pip install --upgrade pip
-            - run: pip install -r requirements.txt
-            - run: pip install pytest
-            - run: pip install pytest-playwright
-            - run: playwright install
-            - run: npm install -g npm
-            - run: npm install -g @angular/cli
-            - run: npm install
-            - run: ng serve &  python -m pytest test_ui.py & python -m flask run
+            - name: Install packages
+              run: |
+                  python -m pip install --upgrade pip
+                  pip install -r requirements.txt
+                  pip install pytest
+                  pip install pytest-playwright
+                  playwright install
+                  npm install -g npm
+                  npm install -g @angular/cli
+                  npm install
+            - name: Start MYSQL server
+              run: |
+                  mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "USE $DB_NAME 
+                  sleep 10
+            - name: Run Ui Tests
+              run: |
+                  ng serve & python -m pytest test_ui.py & python -m flask run
