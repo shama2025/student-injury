@@ -1,5 +1,7 @@
 //fix this later
 name: API Pytest
+ [![Tests: Ui Tests](https://github.com/shama2025/student-injury/actions/workflows/uiTesting.yml/badge.svg)](https://github.com/shama2025/student-injury/actions/workflows/uiTesting.yml) 
+ [![Tests: API Tests](https://github.com/shama2025/student-injury/actions/workflows/apiTesting.yml/badge.svg)](https://github.com/shama2025/student-injury/actions/workflows/apiTesting.yml)
 
 on:
     pull_request:
