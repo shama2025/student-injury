@@ -23,12 +23,10 @@ jobs:
                   npm install -g npm
                   npm install -g @angular/cli
                   npm install
-            - name: Start MYSQL server
+            - name: Start SQL server and Run tests
               run: |
                   sudo apt-get install mysql-server
                   sudo service mysql status
                   sleep 10
-                  mysql -h ${{secrets.DB_HOSTNAME}} -u ${{secrets.DB_USERNAME}} -p${{secrets.DB_PASSWORD}}
-            - name: Run Ui Tests
-              run: |
-                  ng serve & python -m pytest test_ui.py & python -m flask run
+                  mysql -h ${{secrets.DB_HOSTNAME}} -u ${{secrets.DB_USERNAME}} -p${{secrets.DB_PASSWORD}} & ng serve & python -m pytest test_ui.py & python -m flask run
+                  
