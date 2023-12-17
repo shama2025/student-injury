@@ -26,6 +26,6 @@ Run the flask backend
 python -m flask run
 
 Click locally hosted application link
-```sh
+
 http://localhost:4200/
-````
+
