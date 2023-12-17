@@ -18,6 +18,9 @@ jobs:
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
                   pip install pytest
-            - name: Run tests
+            - name: Start SQL server and Run tests
               run: |
+                  sudo apt install mysql-server
+                  sudo systemctl start mysql.service
+                  sleep 10
                   python -m flask run & python -m pytest test_api.py
