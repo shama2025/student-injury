@@ -22,9 +22,9 @@ ng serve
 
 Run the flask backend
 
-````sh
+```sh
 python -m flask run
-
+```
 Click locally hosted application link
 
 http://localhost:4200/
