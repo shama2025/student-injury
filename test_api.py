@@ -24,3 +24,13 @@ def test_login_non_existent_user_api(client):
         f"/api/login?username={random_string}&password={random_string}"
     )
     assert response.status_code == 404
+
+
+def test_create_new_user(client):
+    """This test will confirm that the new user was created"""
+    return ""
+
+
+def test_create_existing_user(client):
+    """This test will confirm that a user already exists when it was being created"""
+    return ""

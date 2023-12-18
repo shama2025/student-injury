@@ -15,7 +15,7 @@ cursor = mydb.cursor()
 """This function will search the table and return a true or false if the user exists"""
 
 
-def confirmLoginCredentials(username, password):
+def confirm_login_credentials(username, password):
     user = (username, password)
     # Use this video guid for refreence: https://www.youtube.com/watch?v=x7SwgcpACng
     cursor.execute("SELECT username , password FROM usersdb.userinfo")
@@ -25,8 +25,39 @@ def confirmLoginCredentials(username, password):
     # Search result for the username and password values
     try:
         result.index(user)
-        print("User does exist!")
         return True  # return Yes if the user does exist
     except ValueError:
-        print("User does not exist!")
         return False  # return No if the user does not exist
+
+
+"""This function will check if the new user data exists"""
+
+
+def check_user_exists(new_user_list):
+    # Use this video guid for refreence: https://www.youtube.com/watch?v=x7SwgcpACng
+    cursor.execute("SELECT username , password, email, name FROM usersdb.userinfo")
+    result = (
+        cursor.fetchall()
+    )  # gets all values from select statement and returns a list of tuples
+    # Search result for the username and password values
+    try:
+        result.index(new_user_list)
+        return True  # return Yes if the user does exist
+    except ValueError:
+        return False  # return No if the user does not exist
+
+
+"""This function will add the new user to the database"""
+
+
+def add_new_user(new_user_list):
+    if check_user_exists(new_user_list):
+        return False
+    sqlQuery = (
+        "INSERT INTO userinfo (username,password,email,name) VALUES (%s,%s,%s,%s)"
+    )
+    cursor.execute(sqlQuery, new_user_list)
+    mydb.commit()
+    if check_user_exists(new_user_list):
+        return True
+    return False
