@@ -27,20 +27,17 @@ export class SignUpPageComponent implements OnInit {
         email: HTMLInputElement,
         name: HTMLInputElement
     ) {
-        const newUser = {
-            username: username.value,
-            password: password.value,
-            email: email.value,
-            name: name.value
-        };
-        this.signUpService.confirmUserCreation(newUser).subscribe((response: Response) => {
-            if (response.ok) {
-                this.router.navigateByUrl(''); //go to athlete table page
-            } else {
-                //alert user that something is wrong
-                console.log(response.text);
-                alert('ERROR:' + response.status + ' ' + response.text);
-            }
-        });
+        this.signUpService
+            .confirmUserCreation(username.value, password.value, email.value, name.value)
+            .subscribe((response: Response) => {
+                if (response.ok) {
+                    console.log('User added!');
+                    this.router.navigateByUrl(''); //go to athlete table page
+                } else {
+                    //alert user that something is wrong
+                    console.log(response.text);
+                    alert('ERROR:' + response.status + ' ' + response.text);
+                }
+            });
     }
 }
