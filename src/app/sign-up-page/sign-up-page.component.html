@@ -1,0 +1,18 @@
+<div class="body">
+    <div class="login-form">
+        <label class="username" for="username-input">Username: </label>
+        <input type="text" class="username-input" name="username-input" #username required />
+
+        <label class="password" for="password">Password: </label>
+        <input type="text" class="username-input" name="password" #password required />
+
+        <label class="email" for="email">Email: </label>
+        <input type="email" class="email-input" name="email" #email required />
+
+        <label class="name" for="name">Name: </label>
+        <input type="text" class="name-input" name="name" #name required />
+
+        <button (click)="createAccount(username, password, email, name)" id="submit-button">Create Account!</button>
+        <!-- Go to next page if account creation was succesful -->
+    </div>
+</div>

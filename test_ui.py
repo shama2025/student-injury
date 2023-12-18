@@ -35,3 +35,12 @@ def test_login_non_existent_user_ui(page: Page):
         "console", lambda console_message: console_logs.append(console_message.text())
     )
     assert ("Boo" in log for log in console_logs)
+
+
+def test_create_new_user():
+    """This test will confirm that a new user is created"""
+    return ""
+
+
+def test_user_already_exists():
+    """This test will confirm that a user already exists when it is trying to be created"""
