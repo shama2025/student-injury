@@ -41,13 +41,19 @@ def api_new_account():
     email = request.args.get("email")
     name = request.args.get("name")
 
-    new_user_list = (username, password, email, name) #Creates new user list
+    new_user_list = (username, password, email, name)  # Creates new user list
 
     if check_user_exists(new_user_list):
-        return Response("User already exists!", status=404, content_type="text/plain") #Returns 404 if user already exists
+        return Response(
+            "User already exists!", status=404, content_type="text/plain"
+        )  # Returns 404 if user already exists
     if add_new_user(new_user_list):
-        return Response("User Created!", status=200, content_type="text/plain") #Returns 200 for an ok Response
-    return Response("Error when creating user!", status=500, content_type="text/plain") #Returns a 500 if an error occurs
+        return Response(
+            "User Created!", status=200, content_type="text/plain"
+        )  # Returns 200 for an ok Response
+    return Response(
+        "Error when creating user!", status=500, content_type="text/plain"
+    )  # Returns a 500 if an error occurs
 
 
 """This route will act as an api endpoint for AT email communication"""
