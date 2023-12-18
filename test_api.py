@@ -8,6 +8,7 @@ from app import app
 fake = Faker()
 Faker.seed(42)
 
+
 @pytest.fixture()
 def client():
     app.config["TESTING"] = True
@@ -31,11 +32,15 @@ def test_login_non_existent_user_api(client):
 
 def test_create_new_user(client):
     """This test will confirm that the new user was created"""
-    response = client.get(f"/api/new/account?username={fake.user_name()}&password={fake.password()}&email={fake.email()}?name={fake.name()}")
+    response = client.get(
+        f"/api/new/account?username={fake.user_name()}&password={fake.password()}&email={fake.email()}?name={fake.name()}"
+    )
     assert response.status_code == 200
 
 
 def test_create_existing_user(client):
     """This test will confirm that a user already exists when it was being created"""
-    response = client.get("/api/new/account?username=JohnDoe123&password=password123&email=JohnDoe@test.com?name=John Doe")
+    response = client.get(
+        "/api/new/account?username=JohnDoe123&password=password123&email=JohnDoe@test.com?name=John Doe"
+    )
     assert response.status_code == 404
