@@ -52,10 +52,10 @@ The test files, built using python and integrated [python playwright](https://pl
 
 ### Ui testing
 
-1.) ng serve
-2.) run ui-test
+1. ng serve
+2. run ui-test
 
 ### Api testing
 
-1.) run api
-2.) run api-test
+1. run api
+2. run api-test
