@@ -32,7 +32,7 @@ export class SignUpPageComponent implements OnInit {
             .subscribe((response: Response) => {
                 if (response.ok) {
                     console.log('User added!');
-                    this.router.navigateByUrl(''); //go to athlete table page
+                    this.router.navigateByUrl('patient-outcome-reported-measure'); //go to athlete table page
                 } else {
                     //alert user that something is wrong
                     console.log(response.text);
