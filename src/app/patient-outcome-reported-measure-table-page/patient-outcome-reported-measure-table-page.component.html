@@ -1,1 +1,22 @@
-<p>patient-outcome-reported-measure-table-page works!</p>
+<div class="body">
+    <table class="form-table" id="form-table">
+        <tr><label>Search Bar: </label>
+            <input type="text" placeholder="Injury name..." (change)="search()"></tr>
+        <tr>
+        <td>
+            Filter by injury button |
+        </td>
+        <td>
+            Filter by if can be downloaded |
+        </td>
+        <td>
+            Filter by ASC/DESC
+        </td>
+    </tr>
+        <tr *ngFor="let tableForm of tableForms">
+        <td>{{tableForm.injury }}</td>
+        <td>{{tableForm.download}}</td>
+        <td>{{tableForm.filepath}}</td>
+    </tr>
+    </table>
+</div>
