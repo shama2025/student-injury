@@ -1,22 +1,18 @@
 <div class="body">
     <table class="form-table" id="form-table">
-        <tr><label>Search Bar: </label>
-            <input type="text" placeholder="Injury name..." (change)="search()"></tr>
         <tr>
-        <td>
-            Filter by injury button |
-        </td>
-        <td>
-            Filter by if can be downloaded |
-        </td>
-        <td>
-            Filter by ASC/DESC
-        </td>
-    </tr>
+            <label>Search Bar: </label>
+            <input type="text" placeholder="Injury name..." (change)="search()" />
+        </tr>
+        <tr>
+            <td>Filter by injury button |</td>
+            <td>Filter by if can be downloaded |</td>
+            <td>Filter by ASC/DESC</td>
+        </tr>
         <tr *ngFor="let tableForm of tableForms">
-        <td>{{tableForm.injury }}</td>
-        <td>{{tableForm.penPaper}}</td>
-        <td>{{tableForm.penPaper}}</td>
-    </tr>
+            <td>{{ tableForm.injury }}</td>
+            <td>{{ tableForm.penPaper }}</td>
+            <td>{{ tableForm.penPaper }}</td>
+        </tr>
     </table>
 </div>

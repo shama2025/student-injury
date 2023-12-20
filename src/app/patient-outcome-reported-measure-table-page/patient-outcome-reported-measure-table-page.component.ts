@@ -28,28 +28,20 @@ export class PatientOutcomeReportedMeasureTablePageComponent implements OnInit {
     /**
      * Searches the table for value contained in the search bar
      */
-    search() :void{
-
-    }
+    search(): void {}
 
     /**
-     * Filters the table by type of injury 
+     * Filters the table by type of injury
      */
-    filterInjuryBtn() :void{
-
-    }
+    filterInjuryBtn(): void {}
 
     /**
      * Filters if the file can be online or needs to be done by paper pencil
      */
-    filterIsPenPaper() :void{
+    filterIsPenPaper(): void {}
 
-    }
-
-    /** 
+    /**
      * Filters by Ascending or Descending alphabetically
      */
-    filterASCDESC() :void{
-
-    }
+    filterASCDESC(): void {}
 }
