@@ -18,6 +18,6 @@ export class SignUpPageServiceService {
      */
     confirmUserCreation(username: string, password: string, email: string, name: string): Observable<any> {
         const loginUrl = `${this.baseApiUrl}/api/new/account?username=${username}&password=${password}&name=${name}&email=${email}`;
-        return this.http.get(loginUrl);
+        return this.http.get(loginUrl, { responseType: 'text' });
     }
 }
