@@ -8,6 +8,8 @@ The purpose of this project is to practice constructing a frontend and backend o
 
 ## Locally Host in Deployment environment
 
+### Local Machine setup/install
+
 Clone the repository
 
 ```sh
@@ -19,6 +21,16 @@ Install requirements.txt
 ```sh
 python -m pip install requirements.txt
 ```
+
+Install [node](https://nodejs.org/en/download/)
+
+Install angular cli
+
+```sh
+npm install -g @angular/cli
+```
+
+### Run Application
 
 Run the angular application
 
