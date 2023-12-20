@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginPageServiceService } from '../services/login-page-service.service';
 import { Router } from '@angular/router';
-import { JsonpInterceptor } from '@angular/common/http';
+
 @Component({
     selector: 'app-login-page',
     templateUrl: './login-page.component.html',
