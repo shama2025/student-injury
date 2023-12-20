@@ -7,7 +7,7 @@ import { PatientOutcomeReportedMeasureTablePageComponent } from './patient-outco
 const routes: Routes = [
     { path: '', component: LoginPageComponent },
     { path: 'sign/up', component: SignUpPageComponent },
-    {path : 'patient-outcome-reported-measure', component:PatientOutcomeReportedMeasureTablePageComponent}
+    { path: 'patient-outcome-reported-measure', component: PatientOutcomeReportedMeasureTablePageComponent }
 ];
 
 @NgModule({
