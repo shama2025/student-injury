@@ -8,7 +8,12 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { PatientOutcomeReportedMeasureTablePageComponent } from './patient-outcome-reported-measure-table-page/patient-outcome-reported-measure-table-page.component';
 
 @NgModule({
-    declarations: [AppComponent, LoginPageComponent, SignUpPageComponent, PatientOutcomeReportedMeasureTablePageComponent],
+    declarations: [
+        AppComponent,
+        LoginPageComponent,
+        SignUpPageComponent,
+        PatientOutcomeReportedMeasureTablePageComponent
+    ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],
     bootstrap: [AppComponent]
