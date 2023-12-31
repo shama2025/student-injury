@@ -38,6 +38,7 @@ def test_login_non_existent_user_ui(page: Page):
 
 # Update this test when injury form page is created
 def test_create_new_user(page: Page):
+    """This test will create a new random user"""
     page.goto("http://localhost:4200/")
     page.get_by_role("button", name="New User").first.click()
     page.wait_for_url("http://localhost:4200/sign/up")
@@ -72,3 +73,13 @@ def test_user_already_exists(page: Page):
     page.locator('input[name="name"]').fill("John Doe")
     page.get_by_role("button", name="Create Account!").click()
     # Expect error to appear on screen
+
+
+# Update tests as more features are created
+def test_download_patient_form_ui(page: Page):
+    """This test will test download feature of a pdf in the table"""
+    test_login_existing_user_ui(page)
+    with page.expect_download() as download_info:
+        page.get_by_role("link", name="Hello").click()
+    download = download_info.value
+    assert download is not None
