@@ -12,13 +12,15 @@ Faker.seed(random.random())
 def test_login_existing_user_ui(page: Page):
     """This test will login in an existing user and confirm the console log shows "Hooray"""
     page.goto("http://localhost:4200/")
-    page.locator("input[name=\"username-input\"]").click()
-    page.locator("input[name=\"username-input\"]").fill("JohnDoe123")
-    page.locator("input[name=\"username-input\"]").press("Tab")
-    page.locator("input[name=\"password\"]").fill("password123")
+    page.locator('input[name="username-input"]').click()
+    page.locator('input[name="username-input"]').fill("JohnDoe123")
+    page.locator('input[name="username-input"]').press("Tab")
+    page.locator('input[name="password"]').fill("password123")
     page.get_by_role("button", name="Sign In!").click()
     page.wait_for_url("http://localhost:4200/patient-outcome-reported-measure")
-    assert page.url == "http://localhost:4200/patient-outcome-reported-measure"#change url to injury forms page
+    assert (
+        page.url == "http://localhost:4200/patient-outcome-reported-measure"
+    )  # change url to injury forms page
 
 
 # Update this test when injury form page is created
@@ -50,7 +52,9 @@ def test_create_new_user(page: Page):
     page.locator('input[name="name"]').fill(fake.name())
     page.get_by_role("button", name="Create Account!").click()
     page.wait_for_url("http://localhost:4200/patient-outcome-reported-measure")
-    assert page.url == "http://localhost:4200/patient-outcome-reported-measure" #change to url of form page
+    assert (
+        page.url == "http://localhost:4200/patient-outcome-reported-measure"
+    )  # change to url of form page
 
 
 # Update this test when injury form page is created
