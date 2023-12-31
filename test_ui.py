@@ -74,8 +74,9 @@ def test_user_already_exists(page: Page):
     page.get_by_role("button", name="Create Account!").click()
     # Expect error to appear on screen
 
-#Update tests as more features are created
-def test_download_patient_form_ui(page:Page):
+
+# Update tests as more features are created
+def test_download_patient_form_ui(page: Page):
     """This test will test download feature of a pdf in the table"""
     test_login_existing_user_ui(page)
     with page.expect_download() as download_info:
