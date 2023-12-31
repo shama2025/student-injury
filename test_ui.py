@@ -5,7 +5,7 @@ from faker import Faker
 from playwright.sync_api import Page, expect
 
 fake = Faker()
-Faker.seed(42)
+Faker.seed(random.random())
 
 
 # Update this test when injury form page is created
@@ -14,10 +14,13 @@ def test_login_existing_user_ui(page: Page):
     page.goto("http://localhost:4200/")
     page.locator('input[name="username-input"]').click()
     page.locator('input[name="username-input"]').fill("JohnDoe123")
-    page.locator('input[name="password"]').click()
+    page.locator('input[name="username-input"]').press("Tab")
     page.locator('input[name="password"]').fill("password123")
     page.get_by_role("button", name="Sign In!").click()
-    # expect(page.url == "")#change url to injury forms page
+    page.wait_for_url("http://localhost:4200/patient-outcome-reported-measure")
+    assert (
+        page.url == "http://localhost:4200/patient-outcome-reported-measure"
+    )  # change url to injury forms page
 
 
 # Update this test when injury form page is created
@@ -37,6 +40,8 @@ def test_login_non_existent_user_ui(page: Page):
 def test_create_new_user(page: Page):
     page.goto("http://localhost:4200/")
     page.get_by_role("button", name="New User").first.click()
+    page.wait_for_url("http://localhost:4200/sign/up")
+    assert page.url == "http://localhost:4200/sign/up"
     page.locator('app-sign-up-page input[name="username-input"]').click()
     page.locator('app-sign-up-page input[name="username-input"]').fill(fake.user_name())
     page.locator('app-sign-up-page input[name="username-input"]').press("Tab")
@@ -46,7 +51,10 @@ def test_create_new_user(page: Page):
     page.locator('input[name="email"]').press("Tab")
     page.locator('input[name="name"]').fill(fake.name())
     page.get_by_role("button", name="Create Account!").click()
-    # expect(page.url == "") #change to url of form page
+    page.wait_for_url("http://localhost:4200/patient-outcome-reported-measure")
+    assert (
+        page.url == "http://localhost:4200/patient-outcome-reported-measure"
+    )  # change to url of form page
 
 
 # Update this test when injury form page is created

@@ -39,6 +39,7 @@ testem.log
 /__pycache__
 __pycache__
 .pytest_cache
+pytestdebug.log
 
 # System files
 .DS_Store
