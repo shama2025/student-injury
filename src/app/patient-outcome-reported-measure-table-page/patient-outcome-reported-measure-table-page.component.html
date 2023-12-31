@@ -1,0 +1,21 @@
+<div class="body">
+    <table class="form-table" id="form-table">
+        <!-- <tr>
+                <td><label>Search Bar: </label></td>
+                <td><input type="text" placeholder="Injury name..." (change)="getSearch(searchQuery)" #searchQuery/></td>
+            </tr>
+            <tr>
+                <td>Filter by injury button<button>Filter</button></td>
+                <td>Filter by downloadable<button>Filter</button></td>
+            </tr> -->
+        <!-- https://www.youtube.com/watch?v=4xSj9jUEJFY -->
+        <tr *ngFor="let tableForm of tableForms">
+            <a download="{{ tableForm.filepath }}" href="{{ tableForm.filepath }}" target="_blank">{{
+                tableForm.injury
+            }}</a>
+            <td id="penPaper">{{ tableForm.penPaper }}</td>
+        </tr>
+    </table>
+    <!-- Routes to email form page -->
+    <button class="next-page-button" (click)="navigateToEmailPage()">Next Page!</button>
+</div>
