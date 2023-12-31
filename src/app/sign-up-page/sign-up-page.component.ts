@@ -30,13 +30,13 @@ export class SignUpPageComponent implements OnInit {
         this.signUpService
             .confirmUserCreation(username.value, password.value, email.value, name.value)
             .subscribe((response: Response) => {
-                if (response.ok) {
-                    console.log('User added!');
-                    this.router.navigateByUrl('patient-outcome-reported-measure'); //go to athlete table page
+                if (JSON.stringify(response)) {
+                    //Route to student-injury-form page
+                    this.router.navigateByUrl('patient-outcome-reported-measure'); //navigate to student form site
                 } else {
-                    //alert user that something is wrong
-                    console.log(response.text);
-                    alert('ERROR:' + response.status + ' ' + response.text);
+                    //Display a popup box that user does not exist and encourage new account creation
+                    alert('ERROR: ' + response.statusText + ' ' + response.text);
+                    console.log('ERROR: ' + response.statusText + ' ' + response.text);
                 }
             });
     }
