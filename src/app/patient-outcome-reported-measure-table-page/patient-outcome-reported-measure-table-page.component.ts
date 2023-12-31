@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-patient-outcome-reported-measure-table-page',
@@ -8,40 +9,30 @@ import { HttpClient } from '@angular/common/http';
     styleUrls: ['./patient-outcome-reported-measure-table-page.component.css']
 })
 export class PatientOutcomeReportedMeasureTablePageComponent implements OnInit {
-    constructor(private http: HttpClient) {}
+    constructor(
+        private http: HttpClient,
+        private route: Router
+    ) {}
 
     ngOnInit(): void {
         this.createTable();
     }
-
+    //*Variable that holds the json file information/
     tableForms: any;
 
     /**
      * This function will generate a table given x amount of PORM forms
      */
     createTable(): void {
-        this.http.get('/assets/media.json').subscribe(response => {
+        this.http.get('/assets/patient-outcome-reported-measure-forms.json').subscribe(response => {
             this.tableForms = response;
         });
     }
 
     /**
-     * Searches the table for value contained in the search bar
+     * Navigates to the email form page
      */
-    search(): void {}
-
-    /**
-     * Filters the table by type of injury
-     */
-    filterInjuryBtn(): void {}
-
-    /**
-     * Filters if the file can be online or needs to be done by paper pencil
-     */
-    filterIsPenPaper(): void {}
-
-    /**
-     * Filters by Ascending or Descending alphabetically
-     */
-    filterASCDESC(): void {}
+    navigateToEmailPage(): void {
+        this.route.navigateByUrl('');
+    }
 }
