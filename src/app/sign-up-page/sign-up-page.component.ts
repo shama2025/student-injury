@@ -35,8 +35,8 @@ export class SignUpPageComponent implements OnInit {
                     this.router.navigateByUrl('patient-outcome-reported-measure'); //navigate to student form site
                 } else {
                     //Display a popup box that user does not exist and encourage new account creation
-                    alert('ERROR: ' + response.statusText + ' ' + response.text);
-                    console.log('ERROR: ' + response.statusText + ' ' + response.text);
+                    alert('ERROR: ' + JSON.stringify(response));
+                    console.log('ERROR: ' + JSON.stringify(response));
                 }
             });
     }
