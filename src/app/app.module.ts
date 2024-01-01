@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { PatientOutcomeReportedMeasureTablePageComponent } from './patient-outcome-reported-measure-table-page/patient-outcome-reported-measure-table-page.component';
+import { AthleticTrainerEmailFormComponent } from './athletic-trainer-email-form/athletic-trainer-email-form.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginPageComponent,
         SignUpPageComponent,
-        PatientOutcomeReportedMeasureTablePageComponent
+        PatientOutcomeReportedMeasureTablePageComponent,
+        AthleticTrainerEmailFormComponent
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],
