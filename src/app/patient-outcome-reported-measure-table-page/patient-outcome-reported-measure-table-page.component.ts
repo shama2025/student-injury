@@ -33,6 +33,6 @@ export class PatientOutcomeReportedMeasureTablePageComponent implements OnInit {
      * Navigates to the email form page
      */
     navigateToEmailPage(): void {
-        this.route.navigateByUrl('');
+        this.route.navigateByUrl('athletic/trainer/email/form');
     }
 }
