@@ -24,7 +24,7 @@ export class LoginPageComponent implements OnInit {
         this.loginPageService.confirmLogin(username.value, password.value).subscribe((response: Response) => {
             if (JSON.stringify(response)) {
                 //Route to student-injury-form page
-                this.router.navigateByUrl('patient-outcome-reported-measure'); //navigate to student form site
+                this.router.navigateByUrl('patient/outcome/reported/measure'); //navigate to student form site
             } else {
                 //Display a popup box that user does not exist and encourage new account creation
                 alert('ERROR: ' + JSON.stringify(response));

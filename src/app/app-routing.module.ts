@@ -8,7 +8,7 @@ import { AthleticTrainerEmailFormComponent } from './athletic-trainer-email-form
 const routes: Routes = [
     { path: '', component: LoginPageComponent },
     { path: 'sign/up', component: SignUpPageComponent },
-    { path: 'patient-outcome-reported-measure', component: PatientOutcomeReportedMeasureTablePageComponent },
+    { path: 'patient/outcome/reported/measure', component: PatientOutcomeReportedMeasureTablePageComponent },
     { path: 'athletic/trainer/email/form', component: AthleticTrainerEmailFormComponent }
 ];
 
