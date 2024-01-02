@@ -61,3 +61,10 @@ def add_new_user(new_user_list):
     if check_user_exists(new_user_list):
         return True
     return False
+
+
+"""This function will take the users information, obtain the email password and send it to the athletic trainer"""
+
+
+def send_email():
+    return ""
