@@ -1,14 +1,22 @@
-<div class="body">
-    <div *ngIf="isVisible">
-        <form class="email-form">
-            <label for="user-email">Your Email: </label>
-            <input name="user-email" placeholder="Your Email" type="text" #userEmail />
-            <label for="at-email"> Athletic Trainer Email:</label>
-            <input name="at-email" placeholder="Your Atletic Trainer Email" type="text" #trainerEmail />
-            <label for="form-upload">Upload PORM Form:</label>
-            <input name="form-upload" type="file" multiple #injuryForm />
-            <button (click)="setEmail(userEmail, trainerEmail, injuryForm)">Submit!</button>
-        </form>
-    </div>
-    <!-- When form is submitted add confirmation text -->
+<!-- Display the form when isVisible is true -->
+<div *ngIf="isVisible; else confirmationBlock">
+    <form class="email-form">
+        <label for="user-email">Your Email: </label>
+        <input name="user-email" placeholder="Your Email" type="text" #userEmail />
+        <label for="at-email"> Athletic Trainer Email:</label>
+        <input name="at-email" placeholder="Your Atletic Trainer Email" type="text" #trainerEmail />
+        <label for="form-upload">Upload PORM Form:</label>
+        <input name="form-upload" type="file" multiple #injuryForm />
+        <button (click)="setEmail(userEmail, trainerEmail, injuryForm)">Submit!</button>
+    </form>
 </div>
+
+<!-- Display the confirmation block when isVisible is false -->
+<ng-template #confirmationBlock>
+    <div>
+        <h2>Email Sent!</h2>
+        <h3>Thank you for using this application!</h3>
+        <p>If you would like to fill out another form click the button below</p>
+        <button (click)="backBtn()">New Form</button>
+    </div>
+</ng-template>
