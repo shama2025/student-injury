@@ -5,6 +5,7 @@ from api_util import (
     confirm_login_credentials,
     add_new_user,
     check_user_exists,
+    send_email,
 )
 
 
@@ -52,4 +53,7 @@ def api_new_account():
 
 @app.route("/api/at/email")
 def api_at_email():
-    return ""
+    user_email = request.args.get("userEmail")
+    trainer_email = request.args.get("trainerEmail")
+    injury_form = request.args.get("injuryForm")
+    response = send_email(user_email, trainer_email, injury_form)
