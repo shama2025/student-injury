@@ -1,5 +1,6 @@
 """This file will contain functions related to the API"""
 import mysql.connector
+import smtplib
 
 # Initalizes a connection to the database
 mydb = mysql.connector.connect(
@@ -66,5 +67,5 @@ def add_new_user(new_user_list):
 """This function will take the users information, obtain the email password and send it to the athletic trainer"""
 
 
-def send_email():
+def send_email(user_email, trainer_email, injury_form):
     return ""
