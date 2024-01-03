@@ -69,15 +69,13 @@ def add_new_user(new_user_list):
 
 
 def send_email(user_email, trainer_email, injury_form):
-    HOST = "smtp-mail.outlook.com"
-    PORT = 587
-    # users_password = get_users_password(user_email)
-    # if users_password == False:
-    #     return False
-    EMAIL = "studentInjuryTest@outlook.com"
-    PASSWORD = "ASDFGHJKL;z123"
+    host = "smtp-mail.outlook.com"
+    port = 587
+    users_password = get_users_password(user_email)
+    if users_password == False:
+        return False
 
-    MESSAGE = f"""Subject: Patient Outcome Reported Meaasure
+    message = f"""Subject: Patient Outcome Reported Meaasure
         Hi, 
 
         I finished my injury form! What days can we meet to discuss it?
@@ -85,7 +83,7 @@ def send_email(user_email, trainer_email, injury_form):
         {injury_form}
     """
     try:
-        smtp = smtplib.SMTP(HOST, PORT)
+        smtp = smtplib.SMTP(host, port)
 
         staus_code, response = smtp.ehlo()
         print(f"Echoing the server:  {staus_code} {response}")
@@ -94,11 +92,11 @@ def send_email(user_email, trainer_email, injury_form):
         print(f"Starting tls connection:  {staus_code} {response}")
 
         staus_code, response = smtp.login(
-            EMAIL, PASSWORD
+            user_email, users_password
         )  # This will need to be the users password
         print(f"Logging in: {staus_code} {response}")
 
-        smtp.sendmail(EMAIL, trainer_email, MESSAGE)
+        smtp.sendmail(user_email, trainer_email, message)
         print("Email sent Succesfully!")
         return True
     except:
