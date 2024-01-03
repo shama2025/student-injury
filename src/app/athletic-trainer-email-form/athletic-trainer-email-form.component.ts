@@ -14,17 +14,15 @@ export class AthleticTrainerEmailFormComponent implements OnInit {
 
     ngOnInit(): void {}
     isVisible = true;
-    file: File | null = null;
     /**
      * Pass the email information to the service
      * @param userEmail
      * @param trainerEmail
      * @param injuryFile
      */
-    setEmail(userEmail: HTMLInputElement, trainerEmail: HTMLInputElement, injuryFile: File): void {
-        this.file = injuryFile;
+    setEmail(userEmail: HTMLInputElement, trainerEmail: HTMLInputElement, injuryFile: HTMLInputElement): void {
         this.athleticTrainerEmailService
-            .sendEmail(userEmail.value, trainerEmail.value, this.file) /*Change this to file type**/
+            .sendEmail(userEmail.value, trainerEmail.value, injuryFile?.files?.item(0)) /*Change this to file type**/
             .subscribe((response: Response) => {
                 if (JSON.stringify(response)) {
                     //Display confirmation text on screen

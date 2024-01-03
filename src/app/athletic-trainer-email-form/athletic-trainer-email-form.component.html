@@ -6,7 +6,7 @@
         <label for="at-email"> Athletic Trainer Email:</label>
         <input name="at-email" placeholder="Your Atletic Trainer Email" type="text" #trainerEmail />
         <label for="form-upload">Upload PORM Form:</label>
-        <input name="form-upload" type="file" multiple #injuryForm />
+        <input name="form-upload" type="file" [multiple]="true" #injuryForm />
         <button (click)="setEmail(userEmail, trainerEmail, injuryForm)">Submit!</button>
     </form>
 </div>
