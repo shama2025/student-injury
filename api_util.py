@@ -1,5 +1,7 @@
 """This file will contain functions related to the API"""
 import mysql.connector
+import smtplib
+import getpass
 
 # Initalizes a connection to the database
 mydb = mysql.connector.connect(
@@ -61,3 +63,57 @@ def add_new_user(new_user_list):
     if check_user_exists(new_user_list):
         return True
     return False
+
+
+"""This function will take the users information, obtain the email password and send it to the athletic trainer"""
+
+
+def send_email(user_email, trainer_email, injury_form):
+    host = "smtp-mail.outlook.com"
+    port = 587
+    users_password = get_users_password(user_email)
+    if users_password == False:
+        return False
+
+    message = f"""Subject: Patient Outcome Reported Meaasure
+        Hi, 
+
+        I finished my injury form! What days can we meet to discuss it?
+        
+        {injury_form}
+    """
+    try:
+        smtp = smtplib.SMTP(host, port)
+
+        staus_code, response = smtp.ehlo()
+        print(f"Echoing the server:  {staus_code} {response}")
+
+        staus_code, response = smtp.starttls()
+        print(f"Starting tls connection:  {staus_code} {response}")
+
+        staus_code, response = smtp.login(
+            user_email, users_password
+        )  # This will need to be the users password
+        print(f"Logging in: {staus_code} {response}")
+
+        smtp.sendmail(user_email, trainer_email, message)
+        print("Email sent Succesfully!")
+        return True
+    except:
+        print("Error!")
+        return False
+
+
+"""This function will get the users email password from the Database"""
+
+
+def get_users_password(user_email):
+    # Use this video guid for refreence: https://www.youtube.com/watch?v=x7SwgcpACng
+    cursor.execute(f"SELECT * FROM usersdb.userinfo WHERE email is {user_email}")
+    result = (
+        cursor.fetchall()
+    )  # gets all values from select statement and returns a list of tuples
+    try:
+        return result.pop(0)  # Return the first password
+    except:
+        return False  # If Something fails
