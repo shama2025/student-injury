@@ -9,11 +9,7 @@ export class AthleticTainerEmailServiceService {
     constructor(private http: HttpClient) {}
     private baseApiUrl = environment.apiBaseUrl;
 
-    sendEmail(
-        userEmail: String,
-        trainerEmail: String,
-        injuryForm: File | null | undefined
-    ): Observable<any> {
+    sendEmail(userEmail: String, trainerEmail: String, injuryForm: File | null | undefined): Observable<any> {
         const emailUrl: string = `${this.baseApiUrl}/api/at/email?userEmail=${userEmail}&trainerEmail=${trainerEmail}&injuryForm=${injuryForm}`;
         return this.http.get(emailUrl);
     }
