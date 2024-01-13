@@ -1,14 +1,14 @@
 <!-- Display the form when isVisible is true -->
-<div *ngIf="isVisible; else confirmationBlock">
-    <form class="email-form">
+<div *ngIf="isVisible; else confirmationBlock" enctype="multipart/form-data">
+    <div class="email-form">
         <label for="user-email">Your Email: </label>
         <input name="user-email" placeholder="Your Email" type="text" #userEmail />
         <label for="at-email"> Athletic Trainer Email:</label>
         <input name="at-email" placeholder="Your Atletic Trainer Email" type="text" #trainerEmail />
         <label for="form-upload">Upload PORM Form:</label>
-        <input name="form-upload" type="file" multiple #injuryForm />
+        <input name="form-upload" type="file" [multiple]="true" #injuryForm />
         <button (click)="setEmail(userEmail, trainerEmail, injuryForm)">Submit!</button>
-    </form>
+    </div>
 </div>
 
 <!-- Display the confirmation block when isVisible is false -->

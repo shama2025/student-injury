@@ -14,7 +14,6 @@ export class AthleticTrainerEmailFormComponent implements OnInit {
 
     ngOnInit(): void {}
     isVisible = true;
-
     /**
      * Pass the email information to the service
      * @param userEmail
@@ -23,8 +22,9 @@ export class AthleticTrainerEmailFormComponent implements OnInit {
      */
     setEmail(userEmail: HTMLInputElement, trainerEmail: HTMLInputElement, injuryFile: HTMLInputElement): void {
         this.athleticTrainerEmailService
-            .sendEmail(userEmail.value, trainerEmail.value, injuryFile.value) /*Change this to file type**/
+            .sendEmail(userEmail.value, trainerEmail.value, injuryFile?.files?.item(0)) /*Change this to file type**/
             .subscribe((response: Response) => {
+                console.log(response);
                 if (JSON.stringify(response)) {
                     //Display confirmation text on screen
                     this.isVisible = false;
