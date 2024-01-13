@@ -51,18 +51,24 @@ def api_new_account():
 """This route will act as an api endpoint for AT email communication"""
 
 
-@app.route("/api/at/email")
+@app.route("/api/at/email", methods=["POST"])
 def api_at_email():
-    user_email = request.args.get("userEmail")
-    trainer_email = request.args.get("trainerEmail")
-    injury_form = request.args.get("injuryForm")
+    user_email = request.form.get("userEmail")
+    trainer_email = request.form.get("trainerEmail")
+    # injury_form = request.form.get("injuryForm")
+    injury_form = request.files.get("injuryForm")
+
+    if injury_form:
+        injury_form.save("uploads/" + injury_form.filename)
+
+    print("Injury form: ", injury_form.headers)
+
     if user_email == None:
         return {"Msg": "User Email value cannot be read"}, 404
     elif trainer_email == None:
         return {"Msg": "Trainer Email value cannot be read"}, 404
     elif injury_form == None:
         return {"Msg": "Injury Form value cannot be read"}, 404
-    print("Passes information: ", user_email, trainer_email, injury_form)
     response = send_email(user_email, trainer_email, injury_form)
     if response:
         return {"Msg": "Email sent!"}, 200
