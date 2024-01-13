@@ -24,6 +24,7 @@ export class AthleticTrainerEmailFormComponent implements OnInit {
         this.athleticTrainerEmailService
             .sendEmail(userEmail.value, trainerEmail.value, injuryFile?.files?.item(0)) /*Change this to file type**/
             .subscribe((response: Response) => {
+                console.log(response);
                 if (JSON.stringify(response)) {
                     //Display confirmation text on screen
                     this.isVisible = false;
