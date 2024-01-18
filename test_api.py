@@ -44,3 +44,9 @@ def test_create_existing_user(client):
         "/api/new/account?username=JohnDoe123&password=password123&email=JohnDoe@test.com&name=John Doe"
     )
     assert response.status_code == 404
+
+def test_email_sending(client):
+    """This test will confirm an email can be sent"""
+    file = open("DashExample.png")
+    response = client.get(f"/api/at/email?userEmail=JohnDoe@test.com&trainerEmail=studentInjuryTest@outlook.com&injuryForm={file}")
+    assert response.status_code == 200

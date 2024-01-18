@@ -17,7 +17,6 @@ def test_login_existing_user_ui(page: Page):
     page.locator('input[name="username-input"]').press("Tab")
     page.locator('input[name="password"]').fill("password123")
     page.get_by_role("button", name="Sign In!").click()
-    page.wait_for_url("http://localhost:4200/patient-outcome-reported-measure")
     assert (
         page.url == "http://localhost:4200/patient-outcome-reported-measure"
     )  # change url to injury forms page
@@ -42,7 +41,6 @@ def test_create_new_user(page: Page):
     page.goto("http://localhost:4200/")
     page.get_by_role("button", name="New User").first.click()
     page.wait_for_url("http://localhost:4200/sign/up")
-    assert page.url == "http://localhost:4200/sign/up"
     page.locator('app-sign-up-page input[name="username-input"]').click()
     page.locator('app-sign-up-page input[name="username-input"]').fill(fake.user_name())
     page.locator('app-sign-up-page input[name="username-input"]').press("Tab")
@@ -83,3 +81,17 @@ def test_download_patient_form_ui(page: Page):
         page.get_by_role("link", name="Hello").click()
     download = download_info.value
     assert download is not None
+
+# Update tests as moer features are created
+def test_email_sending_ui(page:Page):
+    test_login_existing_user_ui(page)
+    test_download_patient_form_ui(page)
+    page.get_by_role("button", name="Next Page!").click()
+    page.get_by_placeholder("Your Email").click()
+    page.get_by_placeholder("Your Email").fill(fake.email())
+    page.get_by_placeholder("Your Atletic Trainer Email").click()
+    page.get_by_placeholder("Your Atletic Trainer Email").fill("studentInjuryTest@outlook.com")
+    page.locator("input[name=\"form-upload\"]").click()
+    page.locator("input[name=\"form-upload\"]").set_input_files("DashExample.png")
+    page.get_by_role("button", name="Submit!").click()
+    expect(page.get_by_text("Email Sent!")).to_be_visible()
