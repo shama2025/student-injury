@@ -44,6 +44,11 @@ Run the flask backend
 python -m flask run
 ```
 
+Run MySql Server
+
+-   Navigate to the Services application
+-   Scroll down to MySql and click start
+
 Click locally hosted application link
 
 http://localhost:4200/
