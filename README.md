@@ -44,7 +44,7 @@ Run the flask backend
 python -m flask run
 ```
 
-Run MySql Server
+Run MySql Server (Windows)
 
 -   Navigate to the Services application
 -   Scroll down to MySql and click start
