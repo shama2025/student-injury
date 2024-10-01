@@ -10,9 +10,9 @@
         "lint-fix": "npx prettier --write .",
         "lint": "npx prettier --check .",
         "black-fix": "python -m black .",
-        "run api": "python -m flask run",
-        "run api-test": "python -m pytest test_api.py",
-        "run ui-test": "python -m pytest test_ui.py"
+        "api": "python -m flask run",
+        "api-test": "python -m pytest test_api.py",
+        "ui-test": "python -m pytest test_ui.py"
     },
     "private": true,
     "dependencies": {
