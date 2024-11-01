@@ -1,18 +1,26 @@
-<div class="body">
-    <div class="login-form">
-        <label class="username" for="username-input">Username: </label>
-        <input type="text" class="username-input" name="username-input" #username required />
+<div class="container">
+    <div class="sign-up-form">
+        <div class="sign-up-header">
+            <h3>Sign Up</h3>
+        </div>
+        <div class="user-input">
+            <input type="text" class="name-input"  placeholder="Full Name: " #name required />
+        </div>
 
-        <label class="password" for="password">Password: </label>
-        <input type="text" class="username-input" name="password" #password required />
+        <div class="user-input">
+            <input type="text" class="username-input"  placeholder="Username: " #username required />
+        </div>
 
-        <label class="email" for="email">Email: </label>
-        <input type="email" class="email-input" name="email" #email required />
+        <div class="user-input">
+            <input type="text" class="username-input" placeholder="Password: " #password required />
+        </div>
 
-        <label class="name" for="name">Name: </label>
-        <input type="text" class="name-input" name="name" #name required />
+        <div class="user-input">
+            <input type="email" class="email-input"  placeholder="Email: " #email required />
+        </div>
 
-        <button (click)="createAccount(username, password, email, name)" id="submit-button">Create Account!</button>
-        <!-- Go to next page if account creation was succesful -->
+        <div class="create-user-btn">
+            <button (click)="createAccount(username, password, email, name)" id="submit-button">Create Account!</button>
+        </div>
     </div>
 </div>

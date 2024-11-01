@@ -1,13 +1,24 @@
-<div class="body">
-    <div class="login-form">
-        <label class="username" for="username-input">Username: </label>
-        <input type="text" class="username-input" name="username-input" #username required />
-
-        <label class="password" for="password">Password: </label>
-        <input type="text" class="username-input" name="password" #password required />
-
-        <button (click)="loginEvent(username, password)" id="submit-button">Sign In!</button>
-        <!-- Routes to create User component -->
-        <button id="submit-button" (click)="newUser()">New User</button>
+    <div class="container">
+        <div class="login-form">
+            <div class="login-header">
+                <h3>Login</h3>
+            </div>
+            <div class="login-input">
+                <div class="cred-input" >
+                    <input type="text" placeholder="Username" name="username-input" #username required />
+                </div>
+                <div class="cred-input">
+                    <input type="text" placeholder="Password" name="password" #password required />
+                </div>
+            </div>
+            <div class="sign-in-input">
+                <div class="sign-in">
+                    <input type="button" (click)="loginEvent(username, password)" class="login-btn" value="Sign In!">
+                </div>
+                <!-- Routes to create User component -->
+                 <div class="sign-up">
+                    <p class="sign-up-text">New to Student Injury? <span><a href="sign/up">Sign Up!</a></span></p>
+                 </div>
+            </div>
+        </div>
     </div>
-</div>

@@ -1,21 +1,34 @@
-<div class="body">
-    <table class="form-table" id="form-table">
-        <!-- <tr>
-                <td><label>Search Bar: </label></td>
-                <td><input type="text" placeholder="Injury name..." (change)="getSearch(searchQuery)" #searchQuery/></td>
-            </tr>
+<div class="container">
+    <div class="table-container">
+        <div class="table">
+
+        <table class="form-table">
             <tr>
-                <td>Filter by injury button<button>Filter</button></td>
-                <td>Filter by downloadable<button>Filter</button></td>
-            </tr> -->
-        <!-- https://www.youtube.com/watch?v=4xSj9jUEJFY -->
-        <tr *ngFor="let tableForm of tableForms">
-            <a download="{{ tableForm.filepath }}" href="{{ tableForm.filepath }}" target="_blank">{{
-                tableForm.injury
-            }}</a>
-            <td id="penPaper">{{ tableForm.penPaper }}</td>
-        </tr>
-    </table>
-    <!-- Routes to email form page -->
-    <button class="next-page-button" (click)="navigateToEmailPage()">Next Page!</button>
+                <th>Injury</th>
+                <th>Patient Outcome Reported Measure</th>
+            </tr>
+            <tr *ngFor="let tableForm of tableForms">
+                <td>
+                    <p class="injury">{{ tableForm.injury }}</p>
+                </td>
+                <td>
+                    <a
+                        class="filepath"
+                        download="{{ tableForm.filepath }}"
+                        href="{{ tableForm.filepath }}"
+                        target="_blank"
+                        >{{ tableForm.filepath }}</a
+                    >
+                </td>
+            </tr>
+        </table>
+    </div>
+        <div class="email-form">
+            <app-athletic-trainer-email-form></app-athletic-trainer-email-form>
+        </div>
+    </div>
 </div>
+<!-- Routes to email form page -->
+<!-- <div class="btn-container">
+        <button class="next-page-button" (click)="navigateToEmailPage()">Next Page!</button>
+    </div> -->
