@@ -1,28 +1,27 @@
 <div class="container">
     <div class="table-container">
         <div class="table">
-
-        <table class="form-table">
-            <tr>
-                <th>Injury</th>
-                <th>Patient Outcome Reported Measure</th>
-            </tr>
-            <tr *ngFor="let tableForm of tableForms">
-                <td>
-                    <p class="injury">{{ tableForm.injury }}</p>
-                </td>
-                <td>
-                    <a
-                        class="filepath"
-                        download="{{ tableForm.filepath }}"
-                        href="{{ tableForm.filepath }}"
-                        target="_blank"
-                        >{{ tableForm.filepath }}</a
-                    >
-                </td>
-            </tr>
-        </table>
-    </div>
+            <table class="form-table">
+                <tr>
+                    <th>Injury</th>
+                    <th>Patient Outcome Reported Measure</th>
+                </tr>
+                <tr *ngFor="let tableForm of tableForms">
+                    <td>
+                        <p class="injury">{{ tableForm.injury }}</p>
+                    </td>
+                    <td>
+                        <a
+                            class="filepath"
+                            download="{{ tableForm.filepath }}"
+                            href="{{ tableForm.filepath }}"
+                            target="_blank"
+                            >{{ tableForm.filepath }}</a
+                        >
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div class="email-form">
             <app-athletic-trainer-email-form></app-athletic-trainer-email-form>
         </div>

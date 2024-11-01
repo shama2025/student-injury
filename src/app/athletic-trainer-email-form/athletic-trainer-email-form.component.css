@@ -1,7 +1,10 @@
-.user-email, .at-email,.form-upload,.submit-btn{
+.user-email,
+.at-email,
+.form-upload,
+.submit-btn {
     padding-bottom: 20px;
 }
 
-.user-email{
+.user-email {
     padding-top: 5px;
 }

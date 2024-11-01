@@ -1,24 +1,26 @@
-    <div class="container">
-        <div class="login-form">
-            <div class="login-header">
-                <h3>Login</h3>
+<div class="container">
+    <div class="login-form">
+        <div class="login-header">
+            <h3>Login</h3>
+        </div>
+        <div class="login-input">
+            <div class="cred-input">
+                <input type="text" placeholder="Username" name="username-input" #username required />
             </div>
-            <div class="login-input">
-                <div class="cred-input" >
-                    <input type="text" placeholder="Username" name="username-input" #username required />
-                </div>
-                <div class="cred-input">
-                    <input type="text" placeholder="Password" name="password" #password required />
-                </div>
+            <div class="cred-input">
+                <input type="text" placeholder="Password" name="password" #password required />
             </div>
-            <div class="sign-in-input">
-                <div class="sign-in">
-                    <input type="button" (click)="loginEvent(username, password)" class="login-btn" value="Sign In!">
-                </div>
-                <!-- Routes to create User component -->
-                 <div class="sign-up">
-                    <p class="sign-up-text">New to Student Injury? <span><a href="sign/up">Sign Up!</a></span></p>
-                 </div>
+        </div>
+        <div class="sign-in-input">
+            <div class="sign-in">
+                <input type="button" (click)="loginEvent(username, password)" class="login-btn" value="Sign In!" />
+            </div>
+            <!-- Routes to create User component -->
+            <div class="sign-up">
+                <p class="sign-up-text">
+                    New to Student Injury? <span><a href="sign/up">Sign Up!</a></span>
+                </p>
             </div>
         </div>
     </div>
+</div>

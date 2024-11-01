@@ -1,40 +1,38 @@
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.login-form{
+.login-form {
     border: 2px solid black;
     padding: 10px;
 }
 
-.login-header{
+.login-header {
     text-align: center;
 }
 
-.login-input{
-
+.login-input {
 }
 
-.cred-input{
+.cred-input {
     padding-bottom: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sign-in{
+.sign-in {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-btn{
-
+.login-btn {
 }
 
-a{
+a {
     text-decoration: none;
 }
