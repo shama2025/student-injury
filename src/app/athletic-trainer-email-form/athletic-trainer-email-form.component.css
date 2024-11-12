@@ -1,10 +1,62 @@
 .user-email,
-.at-email,
-.form-upload,
-.submit-btn {
+.at-email {
+    border-radius: 20px;
+    width: 250px;
+    border-color: gray;
+    height: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-upload-container {
     padding-bottom: 20px;
+}
+.form-upload {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .user-email {
     padding-top: 5px;
+}
+
+.user-email-container,
+.at-email-container {
+    padding-bottom: 20px;
+}
+.email-form {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.email-header {
+    text-align: center;
 }

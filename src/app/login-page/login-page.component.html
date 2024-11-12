@@ -4,15 +4,15 @@
             <h3>Login</h3>
         </div>
         <div class="login-input">
-            <div class="cred-input">
-                <input type="text" placeholder="Username" name="username-input" #username required />
+            <div class="cred-input-container">
+                <input class="cred-input" type="text" placeholder="Username" name="username-input" #username required />
             </div>
-            <div class="cred-input">
-                <input type="text" placeholder="Password" name="password" #password required />
+            <div class="cred-input-container">
+                <input class="cred-input" type="text" placeholder="Password" name="password" #password required />
             </div>
         </div>
         <div class="sign-in-input">
-            <div class="sign-in">
+            <div class="sign-in-container">
                 <input type="button" (click)="loginEvent(username, password)" class="login-btn" value="Sign In!" />
             </div>
             <!-- Routes to create User component -->

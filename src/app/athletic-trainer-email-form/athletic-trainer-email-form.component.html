@@ -1,27 +1,30 @@
 <!-- Display the form when isVisible is true -->
-<div *ngIf="isVisible; else confirmationBlock" enctype="multipart/form-data">
-    <div class="email-form">
-        <div class="user-email">
-            <input name="user-email" placeholder="Your Email" type="text" #userEmail />
-        </div>
-        <div class="at-email">
-            <input name="at-email" placeholder="Your Atletic Trainer Email" type="text" #trainerEmail />
-        </div>
-        <div class="form-upload">
-            <input name="form-upload" type="file" [multiple]="true" #injuryForm />
-        </div>
-        <div class="submit-btn">
-            <button (click)="setEmail(userEmail, trainerEmail, injuryForm)">Submit!</button>
+<div class="container">
+    <div *ngIf="isVisible; else confirmationBlock" enctype="multipart/form-data">
+        <div class="email-form">
+            <div class="email-header">
+                <h3>Fill out Trainer Form</h3>
+            </div>
+            <div class="user-email-container">
+                <input class="user-email"name="user-email" placeholder="Your Email" type="text" #userEmail />
+            </div>
+            <div class="at-email-container">
+                <input class="at-email"name="at-email" placeholder="Your Atletic Trainer Email" type="text" #trainerEmail />
+            </div>
+            <div class="form-upload-container">
+                <input class="form-upload" name="form-upload" type="file" [multiple]="true" #injuryForm />
+            </div>
+            <div class="submit-btn-container">
+                <input type="button" class="submit-btn"(click)="setEmail(userEmail, trainerEmail, injuryForm)" value="Submit">
+            </div>
         </div>
     </div>
+    <ng-template #confirmationBlock>
+        <div class="confirm-container">
+            <h2 class="confirm-header">Email Sent!</h2>
+            <h3 class="confirm-sub-header">Thank you for using this application!</h3>
+            <p class="confirm-txt">If you would like to fill out another form click the button below</p>
+            <input type="button" placeholder="New Form" class="back-btn" />
+        </div>
+    </ng-template>
 </div>
-
-<!-- Display the confirmation block when isVisible is false -->
-<ng-template #confirmationBlock>
-    <div class="confirm-container">
-        <h2 class="confirm-header">Email Sent!</h2>
-        <h3 class="confirm-sub-header">Thank you for using this application!</h3>
-        <p class="confirm-txt">If you would like to fill out another form click the button below</p>
-        <input type="button" placeholder="New Form" class="back-btn" />
-    </div>
-</ng-template>
