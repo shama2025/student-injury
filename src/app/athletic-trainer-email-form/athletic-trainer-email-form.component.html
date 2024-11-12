@@ -6,16 +6,27 @@
                 <h3>Fill out Trainer Form</h3>
             </div>
             <div class="user-email-container">
-                <input class="user-email"name="user-email" placeholder="Your Email" type="text" #userEmail />
+                <input class="user-email" name="user-email" placeholder="Your Email" type="text" #userEmail />
             </div>
             <div class="at-email-container">
-                <input class="at-email"name="at-email" placeholder="Your Atletic Trainer Email" type="text" #trainerEmail />
+                <input
+                    class="at-email"
+                    name="at-email"
+                    placeholder="Your Atletic Trainer Email"
+                    type="text"
+                    #trainerEmail
+                />
             </div>
             <div class="form-upload-container">
                 <input class="form-upload" name="form-upload" type="file" [multiple]="true" #injuryForm />
             </div>
             <div class="submit-btn-container">
-                <input type="button" class="submit-btn"(click)="setEmail(userEmail, trainerEmail, injuryForm)" value="Submit">
+                <input
+                    type="button"
+                    class="submit-btn"
+                    (click)="setEmail(userEmail, trainerEmail, injuryForm)"
+                    value="Submit"
+                />
             </div>
         </div>
     </div>

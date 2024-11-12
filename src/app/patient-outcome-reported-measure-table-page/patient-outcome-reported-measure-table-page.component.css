@@ -14,7 +14,7 @@
 .table {
     display: flex;
     justify-content: center;
-    align-items:flex-start;
+    align-items: flex-start;
     border: 2px solid black;
     padding: 10px;
     height: 75%;
@@ -28,14 +28,14 @@ td {
     text-align: center;
 }
 
-.btn-container{
+.btn-container {
     margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.next-page-btn{
+.next-page-btn {
     border-radius: 5px;
     padding: 5px 10px;
     text-align: center;

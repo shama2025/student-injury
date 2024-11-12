@@ -5,7 +5,10 @@
     height: 100vh;
 }
 
-.name-input,.username-input,.email-input,.password-input{
+.name-input,
+.username-input,
+.email-input,
+.password-input {
     border-radius: 20px;
     width: 250px;
     border-color: gray;
@@ -31,7 +34,7 @@
     align-items: center;
 }
 
-#submit-button{
+#submit-button {
     border-radius: 5px;
     padding: 5px 10px;
     text-align: center;

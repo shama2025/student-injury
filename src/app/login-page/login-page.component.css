@@ -22,7 +22,7 @@
     align-items: center;
 }
 
-.cred-input{
+.cred-input {
     border-radius: 20px;
     width: 250px;
     border-color: gray;
@@ -52,4 +52,3 @@ a {
     margin: 4px 2px;
     cursor: pointer;
 }
-
